@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {showUsers} from '../actions';
+import Crud from './crud';
 import { Table } from 'react-bootstrap';
+
 
 
 
@@ -16,10 +18,12 @@ import { Table } from 'react-bootstrap';
    	return this.props.users.map((user) =>{
    		return (
    		 		<tr key={user.id}>
-   		 		<td>{user.id}</td>
-   		 		<td>{user.name}</td>
-          <td>{user.company.name}</td>
-   		 		</tr>
+     		 		<td>{user.id}</td>
+     		 		<td>{user.name}</td>
+            <td>{user.company.name}</td>
+            
+          </tr>
+        
    			)
    		 
    	   })
@@ -35,6 +39,7 @@ render() {
 			        <th>Id</th>
 			        <th>Name</th>
               <th>Company</th>
+              <th>Actions</th>
 			      </tr>
 			    </thead>
 			    <tbody>
